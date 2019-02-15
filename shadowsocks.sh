@@ -176,7 +176,7 @@ pre_install(){
     dport=$(shuf -i 9000-19999 -n 1)
     echo "Please enter a port for shadowsocks-python [1-65535]"
     read -p "(Default port: 10000):" shadowsocksport
-    [ -z "$shadowsocksport" ] && shadowsocksport=12000
+    [ -z "$shadowsocksport" ] && shadowsocksport=10000
     expr ${shadowsocksport} + 1 &>/dev/null
     if [ $? -eq 0 ]; then
         if [ ${shadowsocksport} -ge 1 ] && [ ${shadowsocksport} -le 65535 ] && [ ${shadowsocksport:0:1} != 0 ]; then
