@@ -1,0 +1,37 @@
+curl https://raw.githubusercontent.com/kevinkingdomviva/ss-panel-and-ss-py-mu/master/cf-ddns.sh && chmod +x cf-ddns.sh && ./cf-ddns.sh
+
+curl https://raw.githubusercontent.com/kevinkingdomviva/ss-panel-and-ss-py-mu/master/cf-ddns.sh > /usr/local/bin/cf-ddns.sh && chmod +x /usr/local/bin/cf-ddns.sh
+
+bash /usr/local/bin/cf-ddns.sh
+
+
+http://www.cloudxns.net/
+
+
+oray或者cloudxns
+
+curl https://raw.githubusercontent.com/kevinkingdomviva/ss-panel-and-ss-py-mu/master/cf-ddns.sh > /usr/local/bin/cf-ddns.sh && chmod +x /usr/local/bin/cf-ddns.sh
+curl https://gist.githubusercontent.com/benkulbertis/fff10759c2391b6618dd/raw > /usr/local/bin/cf-ddns.sh && chmod +x /usr/local/bin/cf-ddns.sh
+一般系统都会带有 curl，但如果出错，就需要先安装 curl，具体安装方法可以谷歌或百度一下。
+
+配置
+打开脚本进行配置：
+
+ vi /usr/local/bin/cf-ddns.sh
+vi /usr/local/bin/cf-ddns.sh
+
+crontab 定时运行
+脚本配置成功后，需要让它定时运行。这里设置每 10 分钟运行一次 cf-ddns.sh 脚本。
+
+ 输入crontab -e，然后会弹出 vi 编辑界面，在里面添加一行：
+ 
+*/10 * * * * /usr/local/bin/cf-ddns.sh >/dev/null 2>&1
+保存并退出。输入service crond status，可以看到 contab 的运行状态。
+如果 contab 服务没有打开，建议参考http://man.linuxde.net/crontab教程，它涵盖了 crontab 服务状态的启动、重启、查看、简单配置等内容。另外也可以看看http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html和http://www.runoob.com/linux/linux-comm-crontab.html。
+
+日志文件
+脚本获取 IP 更改 CloudFlare 的 DNS 记录后，会在目录中生成 ip.txt、cloudflare.ids 和 cloudflare.log 三个文件。ip.txt 记录的是本机的 IP。脚本自动获取到 IP 后，会先与 ip.txt 中的 IP 进行比较，当不一致时（检测到 IP 发生变化），才会更新 CloudFlare 的 DNS 记录，并且把新 IP 写入 ip.txt 文件中。
+
+1 如果 IP 没变化，运行脚本会提示IP has not changed。如果要强制运行脚本更新 DNS 记录，可以rm /usr/local/bin/ip.txt删除掉 ip.txt。
+ 
+2 如果运行忽然出问题，可以试试rm /usr/local/bin/cloudflare.ids把 cloudflare.ids 文件和 ip.txt 文件删除掉，再重新运行脚本
