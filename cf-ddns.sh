@@ -3,8 +3,8 @@
 # CHANGE THESE
 auth_email="kevinkingdomviva@gmail.com"
 auth_key="f3f3eedae29830602af399880ff9f8860d111" # found in cloudflare account settings
-zone_name="doudoulong.services"
-record_name="16hk.doudoulong.services"
+zone_name="doudoulong.club"
+record_name=".doudoulong.club"
 
 # MAYBE CHANGE THESE
 ip=$(curl -s http://ipv4.ip.sb)
