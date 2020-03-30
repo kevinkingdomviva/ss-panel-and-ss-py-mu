@@ -3,8 +3,8 @@
 # CHANGE THESE
 auth_email="kevinkingdomviva@gmail.com"
 auth_key="f3f3eedae29830602af399880ff9f8860d111" # found in cloudflare account settings
-zone_name="ql-data.com"
-record_name="2hk.ql-data.com"
+zone_name="qq3465141490.com"
+record_name="2jp.qq3465141490.com"
 
 # MAYBE CHANGE THESE
 ip=$(curl -s http://ipv4.ip.sb)
