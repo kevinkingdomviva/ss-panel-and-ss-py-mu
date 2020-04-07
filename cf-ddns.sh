@@ -3,7 +3,7 @@
 # CHANGE THESE
 auth_email="kevinkingdomviva@gmail.com"
 auth_key="f3f3eedae29830602af399880ff9f8860d111" # found in cloudflare account settings
-zone_name="qq3465141490.com"
+zone_name="ql-data.com"
 record_name="11de.ql-data.com"
 
 # MAYBE CHANGE THESE
