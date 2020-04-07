@@ -4,7 +4,7 @@
 auth_email="kevinkingdomviva@gmail.com"
 auth_key="f3f3eedae29830602af399880ff9f8860d111" # found in cloudflare account settings
 zone_name="qq3465141490.com"
-record_name="6de.qq3465141490.com"
+record_name="11de.ql-data.com"
 
 # MAYBE CHANGE THESE
 ip=$(curl -s http://ipv4.ip.sb)
